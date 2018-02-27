@@ -1,32 +1,54 @@
 $(function() {
-  var stories = [
-    {
-      name: "Google",
-      url: "http://www.google.com"
-    },
-    {
-      name: "Who the hell still uses this?",
-      url: "http://www.askjeeves.com"
-    },
-    {
-      name: "Facebook",
-      url: "http://www.facebook.com"
-    }
-  ];
+  // var stories = [
+  //   {
+  //     name: "Google",
+  //     url: "http://www.google.com"
+  //   },
+  //   {
+  //     name: "Who the hell still uses this?",
+  //     url: "http://www.askjeeves.com"
+  //   },
+  //   {
+  //     name: "Facebook",
+  //     url: "http://www.facebook.com"
+  //   }
+  // ];
 
   //   <i class="far fa-star"></i>
   function createList() {
-    $("#stories").empty();
-    for (var i = 0; i < stories.length; i++) {
-      $("#stories").append(
-        "<li><i class='far fa-star'></i> " +
-          stories[i].name +
-          " <span class='text-secondary'>(" +
-          stories[i].url +
-          ")</span></li>"
-      );
-    }
+    $.ajax({
+      url: "https://hack-or-snooze.herokuapp.com/stories?skip=0&limit=10",
+      dataType: "json",
+
+      success: function(response) {
+        console.log(response.data);
+        var stories = response.data;
+        $("#stories").empty();
+        for (var i = 0; i < stories.length; i++) {
+          $("#stories").append(
+            "<li><i class='far fa-star'></i> " +
+              stories[i].title +
+              " <span class='text-secondary'>(" +
+              stories[i].url +
+              ")</span></li>"
+          );
+        }
+      },
+      type: "GET"
+    });
   }
+
+
+  $('#signup-button').on('click', function () {
+    $.ajax() {
+      type: 'post',
+      dataType: 'json',
+      url: 'https://hack-or-snooze.herokuapp.com/users/mhueter',
+    }
+  })
+
+
+
   $("#story-form").on("submit", function(e) {
     e.preventDefault();
     var inputName = $("#inputName").val();
@@ -35,10 +57,10 @@ $(function() {
       name: inputName,
       url: inputUrl
     });
-    debugger;
-    console.log(stories);
+    // console.log(stories);
     createList();
   });
+
   $("#stories").on("click", ".fa-star", function() {
     if ($(this).hasClass("far")) {
       $(this)
