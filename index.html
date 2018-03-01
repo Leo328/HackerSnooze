@@ -17,11 +17,10 @@
         <div class='card'>
             <div class='card-header'>
                 Hack or Snooze
-                <a data-toggle="collapse" href='#formDiv'>submit</a>
+                <a data-toggle="collapse" href='#formDiv' id="submitLink">submit</a>
             </div>
             <div class="card-body">
                 <div class="collapse" id="formDiv">
-
                     <form id='story-form'>
                         <div class="form-group row">
                             <label for="inputName" class="col-sm-2 col-form-label text-right">name</label>
@@ -37,33 +36,57 @@
                         </div>
                         <div class="row">
                             <div class="col sm-2">
-
                             </div>
                             <div class="col sm-10">
                                 <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
                             </div>
                         </div>
-
                     </form>
                 </div>
                 <div class="">
                     <ol id="stories">
-
                     </ol>
                 </div>
+                <form id="LoginForm" onsubmit="return false">
+                    <h2>Sign Up you asshole!</h2>
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-3 col-form-label text-right">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Name" name="Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-3 col-form-label text-right">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Username" name="Username" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputName" class="col-sm-3 col-form-label text-right">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="Password" name="Password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="LoginButtonDiv">
+                                <input type="submit" value="Sign up">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="Login">
+                                <input type="submit" value="Log In">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="script.js"></script>
-
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="script.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
 </body>
 
 </html>
